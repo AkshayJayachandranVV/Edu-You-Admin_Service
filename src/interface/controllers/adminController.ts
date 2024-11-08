@@ -9,18 +9,22 @@ class AdminController {
     }
 
 
-    async loginAdmin(data: LoginAdmin){
+    async loginAdmin(call: any, callback: any): Promise<void>{
         try{
-            console.log(data, "login user");
+            console.log("reached-------------------------------------------", call.request);
 
-            const result = await this.adminService.loginAdmin(data)
+            const { email, password } = call.request;
 
-            return result
+            await this.adminService.loginAdmin({ email, password }, callback);
         }catch(error){
             console.log("error in login user usercontroller", error);
         }
 
     }
+
+
+    
+    
 
 
 }

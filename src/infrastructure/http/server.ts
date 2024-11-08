@@ -1,6 +1,7 @@
 import express from 'express'
 import config from '../config/config'
 import RabbitMQClient from '../rabbitMQ/client'
+import { startGrpcServer } from '../grpc/client/grpcServer';
 
 
 
@@ -13,6 +14,8 @@ const startServer = async () =>{
 
 
         console.log(" ADMIN SERVER STARTING ------")
+
+        startGrpcServer();
 
          //rabbitmq initalization
         RabbitMQClient.initialize()
