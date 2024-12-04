@@ -1,18 +1,20 @@
-export interface LoginAdmin {
+export interface AdminLoginRequest {
     email: string;
     password: string;
-}
-
-export interface adminData {
-    id: string;
-    email: string;
-    role: string;
-}
-
-// Define the response type for the login method
-export interface LoginAdminResponse {
+  }
+  
+  export interface AdminLoginResponse {
     success: boolean;
     message: string;
     role?: string;
-    adminData?: adminData;
-}
+    adminData?: AdminData;
+  }
+  
+  export interface AdminData {
+    id: string;
+    email: string;
+    role: string;
+  }
+  
+
+  
